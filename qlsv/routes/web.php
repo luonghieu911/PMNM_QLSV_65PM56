@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use \App\Http\Controllers\TestController;
 use \App\Http\Controllers\admin\LoginController;
+use \App\Http\Controllers\admin\LopController;
 
 /*
 |--------------------------------------------------------------------------
@@ -19,4 +20,6 @@ Route::get('/', function () {
     return view('welcome');
 });
 Route::get('/admin/login',[LoginController::class,'index']);
-Route::post('/admin/login/postlogin',[LoginController::class,'postlogin']);
+Route::post('/admin/home',[LoginController::class,'postlogin']);
+Route::get('/admin/lop/add',[LopController::class,'create']);
+Route::post('/admin/lop/add',[LopController::class,'postcreate']);

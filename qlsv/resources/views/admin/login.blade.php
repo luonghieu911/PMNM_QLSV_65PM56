@@ -25,7 +25,7 @@
         <div class="card-body login-card-body">
             <p class="login-box-msg">Sign in to start your session</p>
 
-            <form action="/admin/login/postlogin" method="post">
+            <form action="/admin/home" method="post">
                 @include('share.error')
                 <div class="input-group mb-3">
                     <input type="email" name="email" class="form-control" placeholder="Email">

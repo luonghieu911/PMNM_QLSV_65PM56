@@ -24,10 +24,13 @@ class LoginController extends Controller
             'email'=> $request->input('email'),
             'password'=>$request->input('password')
         ])){
-            return view('admin.home');
+            return view('admin.home',[
+                'title'=>'Trang chủ'
+            ]);
         }
         Session()->flash('error','Email hoặc Password không chính xác');
         return redirect()->back();
 
     }
+
 }
