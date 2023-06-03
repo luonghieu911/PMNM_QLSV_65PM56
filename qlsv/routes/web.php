@@ -19,7 +19,17 @@ use \App\Http\Controllers\admin\LopController;
 Route::get('/', function () {
     return view('welcome');
 });
-Route::get('/admin/login',[LoginController::class,'index']);
+Route::get('/admin/login',[LoginController::class,'index'])->name('login');
 Route::post('/admin/home',[LoginController::class,'postlogin']);
-Route::get('/admin/lop/add',[LopController::class,'create']);
-Route::post('/admin/lop/add',[LopController::class,'postcreate']);
+
+//Route::get('/admin/lop/add',[LopController::class,'create'])->middleware('auth');
+Route::middleware(['auth'])->group(function () {
+    Route::prefix('admin')->group(function () {
+        Route::prefix('lop')->group(function () {
+            Route::get('add',[LopController::class,'create']);
+            Route::post('add',[LopController::class,'postcreate']);
+            Route::get('list',[LopController::class,'list']);
+        });
+    });
+});
+

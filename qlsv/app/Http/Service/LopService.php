@@ -24,4 +24,7 @@ class LopService
         }
         return true;
     }
+    public function getAll(){
+        return Lop::paginate(1);
+    }
 }

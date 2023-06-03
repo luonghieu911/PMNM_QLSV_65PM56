@@ -25,4 +25,11 @@ class LopController extends Controller
         $result = $this->lopService->create($request);
         return redirect()->back();
     }
+    public function list(){
+        //dd($this->lopService->getAll());
+        return view('admin.lop.list',[
+            'title'=>'Danh sách lớp học',
+            'lops'=>$this->lopService->getAll()
+        ]);
+    }
 }
