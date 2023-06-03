@@ -25,6 +25,21 @@ class LopService
         return true;
     }
     public function getAll(){
-        return Lop::paginate(1);
+        return Lop::paginate(3);
+    }
+    public function edit($lop, $request){
+        try {
+            $lop->malop = $request->input('malop');
+            $lop->tenlop = $request->input('tenlop');
+            $lop->mota = $request->input('mota');
+            $lop->soluongsv = $request->input('soluongsv');
+            $lop->save();
+            Session()->flash('success','Chỉnh sửa lớp học thành công');
+            return true;
+        }
+        catch (Exception $ex){
+            Session()->flash('error','Chỉnh sửa lớp học KHÔNG thành công');
+        }
+        return false;
     }
 }

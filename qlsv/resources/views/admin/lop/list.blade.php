@@ -8,6 +8,7 @@
                 <th>Tên lớp</th>
                 <th>Mô tả</th>
                 <th>Số lượng sv</th>
+                <th>Thao tác</th>
             </tr>
         </thead>
         <tbody>
@@ -18,6 +19,10 @@
                     <td>{{$lop->tenlop}}</td>
                     <td>{{$lop->mota}}</td>
                     <td>{{$lop->soluongsv}}</td>
+                    <td>
+                        <a href="/admin/lop/edit/{{$lop->id}}" class="btn btn-primary"><i class="fa fa-edit"></i></a>
+                        <a href="" class="btn btn-danger"><i class="fa fa-trash"></i></a>
+                    </td>
                 </tr>
             @endforeach
         </tbody>

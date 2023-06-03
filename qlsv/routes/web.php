@@ -29,6 +29,8 @@ Route::middleware(['auth'])->group(function () {
             Route::get('add',[LopController::class,'create']);
             Route::post('add',[LopController::class,'postcreate']);
             Route::get('list',[LopController::class,'list']);
+            Route::get('edit/{lop}',[LopController::class,'edit']);
+            Route::post('edit/{lop}',[LopController::class,'postedit']);
         });
     });
 });
