@@ -21,7 +21,7 @@
                     <td>{{$lop->soluongsv}}</td>
                     <td>
                         <a href="/admin/lop/edit/{{$lop->id}}" class="btn btn-primary"><i class="fa fa-edit"></i></a>
-                        <a href="" class="btn btn-danger"><i class="fa fa-trash"></i></a>
+                        <a class="btn btn-danger" href="#" onclick="Delete({{$lop->id}},'/admin/lop/delete')" ><i class="fa fa-trash"></i></a>
                     </td>
                 </tr>
             @endforeach

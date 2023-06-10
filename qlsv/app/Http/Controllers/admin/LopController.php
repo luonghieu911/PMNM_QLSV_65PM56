@@ -6,7 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Http\Service\LopService;
 use App\Models\Lop;
 use Illuminate\Http\Request;
-use App\Http\Controllers\admin\CreateFormRequest;
+use App\Http\Requests\CreateFormRequest;
 
 class LopController extends Controller
 {
@@ -22,7 +22,7 @@ class LopController extends Controller
             'title'=>'Thêm mới lớp học'
         ]);
     }
-    public function postcreate(\App\Http\Requests\CreateFormRequest $request){
+    public function postcreate(CreateFormRequest $request){
        //dd($request->input());
         $result = $this->lopService->create($request);
         return redirect()->back();
@@ -43,5 +43,19 @@ class LopController extends Controller
     public function postedit(Lop $lop, Request $request){
         $result = $this->lopService->edit($lop, $request);
         return redirect()->back();
+    }
+    public function delete(Request $request){
+        $result = $this->lopService->delete($request);
+        if($result){
+            return response()->json([
+                'error'=>'false',
+                'message'=>'Xóa lớp thành công'
+            ]);
+        }
+        return response()->json([
+            'error'=>'true',
+            'message'=>'Xóa lớp KHÔNG thành công'
+
+        ]);
     }
 }

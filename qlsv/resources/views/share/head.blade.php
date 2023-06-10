@@ -9,4 +9,6 @@
     <link rel="stylesheet" href="/theme/plugins/fontawesome-free/css/all.min.css">
     <!-- Theme style -->
     <link rel="stylesheet" href="/theme/dist/css/adminlte.min.css">
+    <meta name="csrf-token" content="{{ csrf_token() }}">
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js" type="text/javascript"></script>
 </head>

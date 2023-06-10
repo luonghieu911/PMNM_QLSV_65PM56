@@ -29,7 +29,7 @@ class LopService
     }
     public function edit($lop, $request){
         try {
-            $lop->malop = $request->input('malop');
+//            $lop->malop = $request->input('malop');
             $lop->tenlop = $request->input('tenlop');
             $lop->mota = $request->input('mota');
             $lop->soluongsv = $request->input('soluongsv');
@@ -41,5 +41,11 @@ class LopService
             Session()->flash('error','Chỉnh sửa lớp học KHÔNG thành công');
         }
         return false;
+    }
+    public function delete($request){
+        $lop = Lop::where('id',$request->input('id'))->first();
+        if($lop){
+            return $lop->delete();
+        }
     }
 }

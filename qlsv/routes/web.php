@@ -31,6 +31,7 @@ Route::middleware(['auth'])->group(function () {
             Route::get('list',[LopController::class,'list']);
             Route::get('edit/{lop}',[LopController::class,'edit']);
             Route::post('edit/{lop}',[LopController::class,'postedit']);
+            Route::DELETE('delete',[LopController::class,'delete']);
         });
     });
 });

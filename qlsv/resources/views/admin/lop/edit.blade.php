@@ -5,7 +5,7 @@
         <div class="card-body">
             <div class="form-group">
                 <label for="exampleInputEmail1">Mã lớp học</label>
-                <input type="text" value="{{$lop->malop}}" name="malop" class="form-control" id="malop" placeholder="Nhập mã lớp">
+                <input readonly type="text" value="{{$lop->malop}}" name="malop" class="form-control" id="malop" placeholder="Nhập mã lớp">
             </div>
             <div class="form-group">
                 <label for="exampleInputPassword1">Tên lớp</label>
